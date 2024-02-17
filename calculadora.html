@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <div id="resultado"></div>
+    <script>
+    // Funciones para las operaciones
+    function suma(a, b) {
+        return a+b;
+    }
+    function resta(a, b) {
+        return a-b;
+    }
+
+    function multi(a, b) {
+        return a*b;
+    }
+
+    function division(a, b) {
+        if (b != 0) {
+            return a/b;
+        } else {
+            return 'Error: División por cero';
+        }
+    }
+    var num1 = parseFloat(prompt("Ingresa el primer número"));
+    var num2 = parseFloat(prompt("Ingresa el segundo número"));
+    var operacion = prompt("Ingresa la operación (1=suma, 2=resta, 3=multiplicacion, 4=division)");
+    var resultado;
+    switch (operacion) {
+        case '1':
+            resultado = suma(num1, num2);
+            break;
+        case '2':
+            resultado = resta(num1, num2);
+            break;
+        case '3':
+            resultado = multi(num1, num2);
+            break;
+        case '4':
+            resultado = division(num1, num2);
+            break;
+        default:
+            resultado = 'Operación no reconocida';
+    }
+    document.getElementById('resultado').textContent = 'El resultado es: ' + resultado;
+    </script>
+</body>
+</html>
